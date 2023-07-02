@@ -4,6 +4,9 @@ using UnityEngine;
 
 public static class TextureGenerator
 {
+	/*
+	TextureFromColourMap() returns a colour map of perlin noise, the colours and height values can be edited using the "region" in the inspector
+	*/
 	public static Texture2D TextureFromColourMap(Color[] colorMap, int width, int height){
 		Texture2D texture = new Texture2D(width, height);
 		texture.filterMode = FilterMode.Point;
@@ -12,7 +15,9 @@ public static class TextureGenerator
 		texture.Apply();
 		return texture;
 	}
-	
+	/*
+	TextureFromHeightMap() returns a greyscale image of perlin noise in its basic form
+	*/
 	public static Texture2D TextureFromHeightMap(float[,] heightMap)
 	{
 		int width = heightMap.GetLength(0);

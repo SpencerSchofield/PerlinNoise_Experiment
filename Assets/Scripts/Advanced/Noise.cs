@@ -4,6 +4,10 @@ using UnityEngine;
 
 public static class Noise
 {
+	/*
+	GenerateNoiseMap() creates points in a 2D float array using perlin noise which can be used on a plane to create landmasses.
+	The seed, noiseScale, octaves, persistance, lacunarity and offset are all used to modify and add additional noise to the map.
+	*/
 	public static float[,] GenerateNoiseMap(int mapWidth, int mapHeight, int seed, float scale, int octaves, float persistance, float lacunarity, Vector2 offset)
 	{
 		System.Random prng = new System.Random(seed);

@@ -20,6 +20,9 @@ public class MapGenerator : MonoBehaviour
 
 	public TerrainType[] regions;
 
+/*
+GenerateMap() is used to generate a new map using perlin noise from the Noise class.
+*/
 	public void GenerateMap()
 	{
 		float[,] noiseMap = Noise.GenerateNoiseMap(mapWidth, mapHeight, seed, noiseScale, octaves, persistance, lacunarity, offset);

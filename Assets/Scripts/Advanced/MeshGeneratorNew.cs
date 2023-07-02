@@ -4,6 +4,9 @@ using UnityEngine;
 
 public static class MeshGeneratorNew
 {
+	/*
+	GenerateTerrainMesh() takes in a heightMap to produce a mesh that's both effected by perlin noise and a colour map
+	*/
 	public static MeshData GenerateTerrainMesh(float[,] heightMap)
 	{
 		int width = heightMap.GetLength(0);
@@ -36,6 +39,9 @@ public static class MeshGeneratorNew
 	}
 }
 
+/*
+MeshData class to hold mesh data such as vertices, triangles and uvs.
+*/
 public class MeshData
 {
 	public Vector3[] vertices;
@@ -49,6 +55,10 @@ public class MeshData
 		uvs = new Vector2[meshWidth * meshHeight];
 
 	}
+	
+	/*
+	AddTriangles() method is used to add triangles to vertices to create a sqaure 
+	*/
 	public void AddTriangle(int a, int b, int c)
 	{
 		triangles[triangleIndex] = a;
@@ -57,6 +67,9 @@ public class MeshData
 		triangleIndex += 3;
 	}
 	
+	/*
+	CreateMesh() method adds all the custom information we made into the mesh to create the terrain
+	*/
 	public Mesh CreateMesh()
 	{
 		Mesh mesh = new Mesh();
